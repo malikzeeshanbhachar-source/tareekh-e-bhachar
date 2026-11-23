@@ -1,0 +1,724 @@
+```html
+<!DOCTYPE html>
+<html lang="ur" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تاریخِ بھچر | بھچر قبیلے کی تاریخ، شجرۂ نسب اور کتاب</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Nastaliq Urdu & Gulzar & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gulzar&family=Inter:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        urdu: ['"Noto Nastaliq Urdu"', 'serif'],
+                        display: ['"Gulzar"', '"Noto Nastaliq Urdu"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        parchment: '#0f0d0b',
+                        umber: '#191613',
+                        sandstone: '#e8e0d5',
+                        taupe: '#a89f94',
+                        bronze: '#c89d54',
+                        terracotta: '#8c4a32'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            line-height: 2.1;
+        }
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Gulzar', 'Noto Nastaliq Urdu', serif;
+            line-height: 1.7;
+        }
+        .ltr-num {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-parchment text-sandstone antialiased selection:bg-bronze selection:text-parchment overflow-x-hidden">
+
+    <!-- نیویگیشن ہیڈر -->
+    <header class="fixed top-0 w-full z-40 transition-all duration-300 bg-parchment/95 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- لوگو اور عنوان -->
+                <a href="#" class="font-display text-2xl sm:text-3xl text-white flex items-center gap-3">
+                    <span class="w-10 h-10 rounded-xl bg-bronze/20 border border-bronze/50 flex items-center justify-center text-bronze shrink-0">
+                        <i data-lucide="shield" class="w-5 h-5"></i>
+                    </span>
+                    <span>تاریخِ <span class="text-bronze">بھچر</span></span>
+                </a>
+
+                <!-- ڈیسک ٹاپ مینو -->
+                <nav class="hidden lg:flex space-x-reverse space-x-7 text-sm text-taupe">
+                    <a href="#origins" class="hover:text-bronze transition-colors py-2">نسب و شناخت</a>
+                    <a href="#gazetteer" class="hover:text-bronze transition-colors py-2">تاریخی حوالہ جات</a>
+                    <a href="#timeline" class="hover:text-bronze transition-colors py-2">تاریخی ادوار</a>
+                    <a href="#regions" class="hover:text-bronze transition-colors py-2">مراکز و دیہات</a>
+                    <a href="#notables" class="hover:text-bronze transition-colors py-2">نمایاں شخصیات</a>
+                    <a href="#book" class="hover:text-bronze transition-colors py-2 text-sandstone font-semibold">کتاب</a>
+                    <a href="#order" class="hover:text-bronze transition-colors py-2">حصولِ کتاب</a>
+                </nav>
+
+                <!-- موبائل مینو بٹن -->
+                <button id="mobile-menu-btn" aria-label="مینو کھولیں" class="lg:hidden p-3 text-sandstone hover:text-bronze focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- موبائل نیویگیشن ڈراور -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-umber border-b border-white/10 px-6 pt-4 pb-8 space-y-2">
+            <a href="#origins" class="mobile-link block text-base text-taupe hover:text-bronze py-2">نسب و شناخت</a>
+            <a href="#gazetteer" class="mobile-link block text-base text-taupe hover:text-bronze py-2">تاریخی حوالہ جات</a>
+            <a href="#timeline" class="mobile-link block text-base text-taupe hover:text-bronze py-2">تاریخی ادوار</a>
+            <a href="#regions" class="mobile-link block text-base text-taupe hover:text-bronze py-2">مراکز و دیہات</a>
+            <a href="#notables" class="mobile-link block text-base text-taupe hover:text-bronze py-2">نمایاں شخصیات</a>
+            <a href="#book" class="mobile-link block text-base text-sandstone hover:text-bronze py-2">کتاب (تاریخِ بھچر)</a>
+            <a href="#order" class="mobile-link block text-base text-taupe hover:text-bronze py-2">حصولِ کتاب و شجرہ</a>
+        </div>
+    </header>
+
+    <!-- ہیرو سیکشن -->
+    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden">
+        <!-- پسِ منظر تصویر -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=2000&q=85" 
+                onerror="this.src='https://placehold.co/1920x1080/191613/e8e0d5?text=Wan+Bhachran+%26+Salt+Range'"
+                alt="تاریخی فنِ تعمیر اور سرزمینِ پنجاب" 
+                class="w-full h-full object-cover object-center opacity-25 scale-105"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-parchment via-parchment/80 to-parchment/45"></div>
+        </div>
+
+        <!-- مرکزی مواد -->
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-bronze/10 border border-bronze/30 text-bronze text-xs sm:text-sm mb-6">
+                <i data-lucide="scroll-text" class="w-4 h-4"></i>
+                <span>تاریخی ورثہ • کوہِ نمک، وادیٔ سندھ اور تھل</span>
+            </div>
+            
+            <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-normal text-white mb-6">
+                بھچر قبیلے کی <span class="text-bronze">عظیم تاریخ</span> و روایات
+            </h1>
+            
+            <p class="max-w-3xl mx-auto text-base sm:text-xl text-taupe leading-loose mb-10">
+                میانوالی، واں بھچراں، خوشاب اور سرگودھا کی سرزمین پر صدیوں سے آباد قطب شاہی کھوکھر اعوان / راجپوت شاخ کے بہادر سپوتوں، ذیلداروں اور کاشتکاروں کی مستند تاریخ اور شجرۂ نسب کا جامع ذخیرہ۔
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#book" class="w-full sm:w-auto px-8 py-4 bg-bronze text-parchment text-base font-bold rounded-xl hover:bg-amber-400 transition-all shadow-lg shadow-bronze/15">
+                    کتاب کا مطالعہ کریں
+                </a>
+                <a href="#origins" class="w-full sm:w-auto px-8 py-4 bg-umber border border-white/15 text-sandstone text-base rounded-xl hover:bg-white/10 transition-all">
+                    قبیلے کی تاریخ پڑھیں
+                </a>
+            </div>
+        </div>
+
+        <!-- نیچے سکرول کا اشارہ -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce text-bronze/70">
+            <i data-lucide="chevrons-down" class="w-6 h-6"></i>
+        </div>
+    </section>
+
+    <!-- نسبی پسِ منظر اور قبیلے کی شناخت -->
+    <section id="origins" class="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <!-- تفصیلی متن -->
+            <div class="lg:col-span-7 space-y-6">
+                <span class="text-sm text-bronze block">نسبی پسِ منظر اور شناخت</span>
+                <h2 class="font-display text-3xl sm:text-5xl text-white">
+                    تھل اور کوہِ نمک کے محافظ و زمیندار
+                </h2>
+                <p class="text-taupe text-base sm:text-lg leading-loose">
+                    <strong class="text-sandstone font-semibold">بھچر (Bhachar)</strong> مغربی پنجاب کے معروف اور تاریخی زمیندار قبائل میں شمار ہوتا ہے۔ تاریخی اور برطانوی دور کے سرکاری گزیٹیئرز کے مطابق بھچر قبیلے کا تعلق تاریخی <strong class="text-sandstone">کھوکھر (Khokhar) راجپوت / قطب شاہی اعوان</strong> قبیلے کی ایک نامور شاخ سے ہے، جو وادیٔ جہلم اور سندھ ساگر دوآب (تھل) میں اپنی شجاعت، مہمان نوازی اور زراعت پیشہ روایات کے باعث ممتاز رہے۔
+                </p>
+                <p class="text-taupe text-base sm:text-lg leading-loose">
+                    اس قبیلے کے معززین روایتی طور پر اپنے نام کے ساتھ <strong class="text-bronze">"ملک" (Malik)</strong> کا معزز لقب استعمال کرتے ہیں۔ پڑوسی پشتون قبائل (خصوصاً نیازی قبیلے) کے تاریخی و ثقافتی اثر کی وجہ سے بھچر قبیلے کی ذیلی شاخوں کے ناموں کے ساتھ بھی <strong class="text-sandstone">"خیل" (Khel)</strong> کا لاحقہ لگایا جاتا ہے، جن میں <strong class="text-sandstone">میانہ بھچر (Miana Bhachar)</strong> کو قبیلے کے اندر ایک خاص روحانی اور معزز مقام حاصل رہا ہے۔
+                </p>
+
+                <!-- اہم ستون -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-white/10">
+                    <div class="bg-umber p-5 rounded-2xl border border-white/5">
+                        <p class="font-display text-xl text-bronze">کھوکھر و اعوان نسبت</p>
+                        <p class="text-xs sm:text-sm text-taupe mt-2">تاریخی شاہ پور اور وادیٔ جہلم سے ہجرت و آبادکاری</p>
+                    </div>
+                    <div class="bg-umber p-5 rounded-2xl border border-white/5">
+                        <p class="font-display text-xl text-bronze">ملک اور خیل روایات</p>
+                        <p class="text-xs sm:text-sm text-taupe mt-2">ذیلداری نظام اور میانہ بھچر جیسی ذیلی شاخیں</p>
+                    </div>
+                    <div class="bg-umber p-5 rounded-2xl border border-white/5">
+                        <p class="font-display text-xl text-bronze">واں بھچراں کا قیام</p>
+                        <p class="text-xs sm:text-sm text-taupe mt-2">شیر شاہ سوری کی تاریخی باؤلی سے منسوب مرکز</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- تاریخی اقتباس کارڈ -->
+            <div class="lg:col-span-5">
+                <div class="relative rounded-2xl overflow-hidden bg-umber border border-bronze/30 p-8 sm:p-10 shadow-2xl">
+                    <div class="absolute top-0 left-0 p-6 opacity-10 text-bronze">
+                        <i data-lucide="feather" class="w-32 h-32"></i>
+                    </div>
+                    <span class="text-xs text-bronze block mb-4">تاریخی حکمت و روایت</span>
+                    <blockquote class="font-display text-xl sm:text-2xl text-sandstone leading-relaxed mb-6">
+                        "جس درخت کی جڑیں زمین میں گہری نہ ہوں وہ آندھیوں کا مقابلہ نہیں کر سکتا، اور جو نسل اپنے بزرگوں کی تاریخ بھلا دے وہ اپنی پہچان کھو دیتی ہے۔"
+                    </blockquote>
+                    <div class="border-t border-white/10 pt-4 flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-semibold text-white">قدیم مقامی روایت</p>
+                            <p class="text-xs text-taupe">واں بھچراں اور کوہِ نمک کی زبانی تاریخ سے ماخوذ</p>
+                        </div>
+                        <i data-lucide="landmark" class="w-6 h-6 text-bronze shrink-0"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تاریخی و سرکاری دستاویزات (Gazetteers & Historians) -->
+    <section id="gazetteer" class="py-24 bg-umber border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-sm text-bronze block mb-2">مستند تاریخی حوالہ جات</span>
+                <h2 class="font-display text-3xl sm:text-5xl text-white mb-4">گزیٹیئرز اور مؤرخین کی نظر میں</h2>
+                <p class="text-taupe text-base sm:text-lg">
+                    انیسویں اور بیسویں صدی کے معروف مؤرخین اور برطانوی عہد کے سرکاری ریکارڈز میں بھچر قبیلے کا تذکرہ۔
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- حوالہ ۱ -->
+                <div class="bg-parchment p-8 rounded-2xl border border-white/10 hover:border-bronze/40 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-bronze/15 text-bronze flex items-center justify-center mb-6">
+                        <i data-lucide="book-marked" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-white mb-2">ایچ اے روز (H.A. Rose)</h3>
+                    <p class="text-xs text-bronze mb-4">A Glossary of the Tribes and Castes (1911)</p>
+                    <p class="text-taupe text-sm sm:text-base leading-loose">
+                        معروف محقق ایچ اے روز نے اپنی شہرہ آفاق کتاب میں بھچر قبیلے کو قدیم <strong class="text-sandstone">شاہ پور (موجودہ سرگودھا و خوشاب)</strong> اور ملحقہ علاقوں کا ایک مستحکم کاشتکار اور زمیندار <strong class="text-sandstone">کھوکھر قبیلہ</strong> قرار دیا ہے۔
+                    </p>
+                </div>
+
+                <!-- حوالہ ۲ -->
+                <div class="bg-parchment p-8 rounded-2xl border border-white/10 hover:border-bronze/40 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-bronze/15 text-bronze flex items-center justify-center mb-6">
+                        <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-white mb-2">جے ایم وائیکلی (J.M. Wikeley)</h3>
+                    <p class="text-xs text-bronze mb-4">Punjabi Musalmans (1915 / 1931 Census)</p>
+                    <p class="text-taupe text-sm sm:text-base leading-loose">
+                        فوجی مؤرخ جے ایم وائیکلی کے مطابق بھچر ضلع میانوالی کی جنوب مشرقی سرحد پر آباد ایک بااثر قبیلہ ہے جس کا مرکزی گڑھ <strong class="text-sandstone">واں بھچراں</strong> ہے۔ قبیلے کے سربراہ کے پاس <strong class="text-sandstone">ذیلدار</strong> کا منصب تھا اور قبیلے کے نوجوان برطانوی رسالوں (Cavalry) میں کمیشنڈ افسر رہے۔
+                    </p>
+                </div>
+
+                <!-- حوالہ ۳ -->
+                <div class="bg-parchment p-8 rounded-2xl border border-white/10 hover:border-bronze/40 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-bronze/15 text-bronze flex items-center justify-center mb-6">
+                        <i data-lucide="landmark" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-white mb-2">گزیٹیئر آف میانوالی (1915)</h3>
+                    <p class="text-xs text-bronze mb-4">شیر شاہ سوری کی باؤلی اور بندوبستِ اراضی</p>
+                    <p class="text-taupe text-sm sm:text-base leading-loose">
+                        پنجابی زبان میں <strong class="text-sandstone">"واں"</strong> کے معنی کنویں کے ہیں۔ سولہویں صدی عیسوی میں <strong class="text-sandstone">شیر شاہ سوری</strong> نے گجرات سے بنوں جانے والے شاہی راستے پر ایک عظیم سیڑھیوں والا کنواں (باؤلی) تعمیر کروایا، جس کی نسبت سے یہ قصبہ واں بھچراں کہلایا۔
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تاریخی ادوار / ٹائم لائن -->
+    <section id="timeline" class="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="text-sm text-bronze block mb-2">تاریخی سفر</span>
+            <h2 class="font-display text-3xl sm:text-5xl text-white mb-4">بھچر قبیلے کے اہم تاریخی ادوار</h2>
+            <p class="text-taupe text-base">ہجرت، آبادکاری، شیر شاہ سوری کی باؤلی سے لے کر عصرِ حاضر تک کے نمایاں سنگِ میل۔</p>
+        </div>
+
+        <!-- فلٹر بٹن -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12" id="era-tabs">
+            <button data-era="all" class="era-btn px-6 py-2.5 rounded-xl text-sm bg-bronze text-parchment font-bold transition-all">تمام ادوار</button>
+            <button data-era="early" class="era-btn px-6 py-2.5 rounded-xl text-sm bg-umber text-taupe hover:text-white border border-white/10 transition-all">قدیم آبادکاری و سوری دور</button>
+            <button data-era="colonial" class="era-btn px-6 py-2.5 rounded-xl text-sm bg-umber text-taupe hover:text-white border border-white/10 transition-all">انیسویں و بیسویں صدی</button>
+            <button data-era="modern" class="era-btn px-6 py-2.5 rounded-xl text-sm bg-umber text-taupe hover:text-white border border-white/10 transition-all">قیامِ پاکستان تا حال</button>
+        </div>
+
+        <!-- ٹائم لائن کارڈز -->
+        <div id="timeline-container" class="space-y-6">
+            <!-- جاوا اسکرپٹ سے لوڈ ہوں گے -->
+        </div>
+    </section>
+
+    <!-- جغرافیائی مراکز اور تاریخی دیہات -->
+    <section id="regions" class="py-24 bg-umber border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+                <div>
+                    <span class="text-sm text-bronze block mb-2">آبائی علاقے اور دیہات</span>
+                    <h2 class="font-display text-3xl sm:text-5xl text-white">تاریخی مراکز و مواضعات</h2>
+                </div>
+                <p class="text-taupe text-base max-w-md">
+                    ضلع میانوالی کے علاوہ خوشاب، سرگودھا اور منڈی بہاؤالدین کے مختلف دیہات میں بھچر قبیلہ صدیوں سے آباد ہے۔
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- مرکز ۱ -->
+                <div class="bg-parchment p-8 rounded-2xl border border-white/10 hover:border-bronze/40 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-bronze/10 text-bronze flex items-center justify-center mb-6">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-white mb-2">واں بھچراں اور ضلع میانوالی</h3>
+                    <p class="text-xs text-bronze mb-4">مرکزی گڑھ اور تاریخی مواضعات</p>
+                    <p class="text-taupe text-sm sm:text-base leading-loose">
+                        <strong class="text-sandstone">واں بھچراں</strong> اس قبیلے کا سب سے بڑا مرکز ہے۔ اس کے علاوہ ضلع میانوالی میں <strong class="text-sandstone">موزع جال، موزع علووالی، موزع دوآبہ، موزع شادیہ، مظفرپور</strong> اور <strong class="text-sandstone">وچوین بالا</strong> بھچر قبیلے کے قدیم اور معروف دیہات ہیں۔
+                    </p>
+                </div>
+
+                <!-- مرکز ۲ -->
+                <div class="bg-parchment p-8 rounded-2xl border border-white/10 hover:border-bronze/40 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-bronze/10 text-bronze flex items-center justify-center mb-6">
+                        <i data-lucide="mountain" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-white mb-2">خوشاب، تھل اور تلوکر</h3>
+                    <p class="text-xs text-bronze mb-4">دامنِ کوہِ نمک و صحرائے تھل</p>
+                    <p class="text-taupe text-sm sm:text-base leading-loose">
+                        وادیٔ جہلم اور تھل کے سرحدی علاقوں (خوشاب اور <strong class="text-sandstone">تلوکر</strong>) میں بھچر خاندان صدیوں سے زراعت اور گلہ بانی سے وابستہ رہے، جنہوں نے مقامی دفاع اور پنچایتی نظام میں کلیدی کردار ادا کیا۔
+                    </p>
+                </div>
+
+                <!-- مرکز ۳ -->
+                <div class="bg-parchment p-8 rounded-2xl border border-white/10 hover:border-bronze/40 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-bronze/10 text-bronze flex items-center justify-center mb-6">
+                        <i data-lucide="sprout" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-white mb-2">سرگودھا و منڈی بہاؤالدین</h3>
+                    <p class="text-xs text-bronze mb-4">قدیم شاہ پور اور نہری آبادیاں</p>
+                    <p class="text-taupe text-sm sm:text-base leading-loose">
+                        تاریخی روایات کے مطابق بھچر اور گنجیال قبائل کا ابتدائی تعلق قدیم <strong class="text-sandstone">شاہ پور (سرگودھا)</strong> سے رہا۔ نہری نظام کی توسیع کے بعد سرگودھا، بھلوال اور منڈی بہاؤالدین میں بھی بھچر خاندانوں نے جدید زرعی فارمز آباد کیے۔
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نمایاں تاریخی و سیاسی شخصیات -->
+    <section id="notables" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-sm text-bronze block mb-2">مشاہیرِ قبیلہ</span>
+            <h2 class="font-display text-3xl sm:text-5xl text-white mb-4">نمایاں تاریخی و عوامی شخصیات</h2>
+            <p class="text-taupe text-base sm:text-lg">
+                سیاست، مزدور تحریک، عسکری خدمات اور سماجی فلاح میں بھچر قبیلے کے نامور سپوتوں کی خدمات۔
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- شخصیت ۱ -->
+            <div class="bg-umber p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs px-3 py-1 rounded-full bg-bronze/15 text-bronze inline-block mb-4">تاریخی و ترقی پسند رہنما</span>
+                    <h3 class="font-display text-xl text-white mb-2">ملک دوست محمد بھچر</h3>
+                    <p class="text-taupe text-sm leading-loose">
+                        یکم مئی <span class="ltr-num">1920</span>ء کو واں بھچراں میں پیدا ہوئے۔ برصغیر کی مزدور اور کسان تحریک کے ایک معتبر کردار جنہیں سرائیکی وسیب اور پنجاب کی تاریخ میں عزت کی نگاہ سے یاد کیا جاتا ہے۔
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 text-xs text-bronze">واں بھچراں، میانوالی</div>
+            </div>
+
+            <!-- شخصیت ۲ -->
+            <div class="bg-umber p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs px-3 py-1 rounded-full bg-bronze/15 text-bronze inline-block mb-4">پارلیمانی و قبائلی قیادت</span>
+                    <h3 class="font-display text-xl text-white mb-2">ملک ممتاز احمد بھچر</h3>
+                    <p class="text-taupe text-sm leading-loose">
+                        واں بھچراں سے تعلق رکھنے والے معروف سیاستدان اور قبائلی سربراہ، جو <span class="ltr-num">1985</span>ء اور <span class="ltr-num">1997</span>ء کے عام انتخابات میں رکنِ پنجاب اسمبلی منتخب ہوئے اور علاقائی ترقی میں کردار ادا کیا۔
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 text-xs text-bronze">سابق رکنِ پنجاب اسمبلی</div>
+            </div>
+
+            <!-- شخصیت ۳ -->
+            <div class="bg-umber p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs px-3 py-1 rounded-full bg-bronze/15 text-bronze inline-block mb-4">عصرِ حاضر کی قیادت</span>
+                    <h3 class="font-display text-xl text-white mb-2">ملک احمد خان بھچر</h3>
+                    <p class="text-taupe text-sm leading-loose">
+                        واں بھچراں کے معروف سیاسی رہنما جو <span class="ltr-num">2013</span>ء، <span class="ltr-num">2018</span>ء اور <span class="ltr-num">2024</span>ء میں رکنِ پنجاب اسمبلی منتخب ہوئے اور پنجاب اسمبلی میں قائدِ حزبِ اختلاف (اپوزیشن لیڈر) کے منصب پر فائز رہے۔
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 text-xs text-bronze">رکنِ پنجاب اسمبلی</div>
+            </div>
+
+            <!-- شخصیت ۴ -->
+            <div class="bg-umber p-6 rounded-2xl border border-white/10 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs px-3 py-1 rounded-full bg-bronze/15 text-bronze inline-block mb-4">ذیلداری و عسکری ورثہ</span>
+                    <h3 class="font-display text-xl text-white mb-2">عمائدین و غازیانِ بھچر</h3>
+                    <p class="text-taupe text-sm leading-loose">
+                        انیسویں و بیسویں صدی کے ذیلداران اور نمبرداران، نیز برطانوی ہندی فوج کے رسالوں اور بعد ازاں افواجِ پاکستان و سول سروسز میں ملک و قوم کا نام روشن کرنے والے سپوت۔
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 text-xs text-bronze">قومی و عسکری خدمات</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- کتاب کا تعارف (تاریخِ بھچر) -->
+    <section id="book" class="py-24 bg-umber border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- کتاب کا تھری ڈی کور ماڈل -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 sm:w-80 aspect-[2/3] rounded-l-2xl rounded-r-md bg-gradient-to-bl from-[#2a1f18] via-[#1c140f] to-[#0f0b08] border-2 border-bronze/45 shadow-[-20px_20px_60px_rgba(0,0,0,0.85)] p-8 flex flex-col justify-between">
+                        <!-- کتاب کی جلد کا ابھار (دائیں جانب اردو کتاب کے مطابق) -->
+                        <div class="absolute inset-y-0 right-3 w-px bg-white/15"></div>
+                        <div class="absolute inset-y-0 right-4 w-px bg-black/70"></div>
+
+                        <div class="pr-3">
+                            <p class="text-xs text-bronze mb-2">مستند تحقیقی و تاریخی ایڈیشن</p>
+                            <div class="w-12 h-0.5 bg-bronze/60 mb-5"></div>
+                            <h3 class="font-display text-3xl sm:text-4xl text-white leading-snug">
+                                تاریخِ بھچر
+                            </h3>
+                            <p class="text-sm text-sandstone/85 mt-3 leading-relaxed">
+                                نسب، روایات، واں بھچراں اور شجرۂ نسب کی مکمل دستاویز
+                            </p>
+                        </div>
+
+                        <!-- درمیانی مونوگرام -->
+                        <div class="pr-3 my-auto flex justify-center">
+                            <div class="w-24 h-24 rounded-full border border-bronze/40 flex items-center justify-center bg-bronze/10">
+                                <i data-lucide="book-open-check" class="w-10 h-10 text-bronze"></i>
+                            </div>
+                        </div>
+
+                        <div class="pr-3 border-t border-bronze/25 pt-4">
+                            <p class="text-xs text-taupe">مرتب و محقق: مجلسِ تاریخِ بھچر</p>
+                            <p class="text-xs text-bronze mt-1">مجلد ایڈیشن • مع شجرۂ نسب چارٹس</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- کتاب کی تفصیل اور ابواب کا پیش منظر -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-sm text-bronze block">خصوصی اشاعت</span>
+                    <h2 class="font-display text-3xl sm:text-5xl text-white">
+                        کتاب "تاریخِ بھچر": ہماری تحریری میراث کا تحفظ
+                    </h2>
+                    <p class="text-taupe text-base sm:text-lg leading-loose">
+                        برسوں کی تاریخی تحقیق، ڈسٹرکٹ گزیٹیئرز، بندوبستِ اراضی کے قدیم ریکارڈز اور بزرگوں کے سینہ بہ سینہ محفوظ بیانات کو یکجا کر کے ایک جامع کتاب کی صورت میں مرتب کیا گیا ہے تاکہ نئی نسل اپنے شاندار ماضی سے جڑی رہے۔
+                    </p>
+
+                    <!-- ابواب کا انتخاب -->
+                    <div class="bg-parchment rounded-2xl border border-white/10 p-6">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <span class="text-sm text-bronze font-semibold">فہرستِ ابواب (اقتباس پڑھیں)</span>
+                            <span class="text-xs text-taupe">کسی بھی باب پر کلک کریں</span>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5" id="chapter-buttons">
+                            <button data-chapter="0" class="chapter-btn text-right px-4 py-3 rounded-xl bg-bronze/20 border border-bronze text-white text-sm font-semibold transition-all">
+                                باب اول — وجۂ تسمیہ اور کھوکھر نسبت
+                            </button>
+                            <button data-chapter="1" class="chapter-btn text-right px-4 py-3 rounded-xl bg-umber border border-white/5 text-taupe hover:text-white text-sm transition-all">
+                                باب دوم — واں بھچراں اور شیر شاہ کی باؤلی
+                            </button>
+                            <button data-chapter="2" class="chapter-btn text-right px-4 py-3 rounded-xl bg-umber border border-white/5 text-taupe hover:text-white text-sm transition-all">
+                                باب سوم — گزیٹیئرز اور ذیلی شاخیں (خیل)
+                            </button>
+                            <button data-chapter="3" class="chapter-btn text-right px-4 py-3 rounded-xl bg-umber border border-white/5 text-taupe hover:text-white text-sm transition-all">
+                                باب چہارم — مشاہیر اور شجرۂ نسب چارٹس
+                            </button>
+                        </div>
+
+                        <!-- اقتباس دکھانے کا خانہ -->
+                        <div class="p-6 rounded-xl bg-umber/90 border border-white/5">
+                            <h4 id="excerpt-title" class="font-display text-xl text-sandstone mb-2">باب اول: وجۂ تسمیہ اور کھوکھر نسبت</h4>
+                            <p id="excerpt-text" class="text-sm sm:text-base text-taupe leading-loose">
+                                "تاریخی اور لسانی شواہد بھچر قبیلے کا سلسلۂ نسب وادیٔ جہلم اور شاہ پور کے قدیم کھوکھر راجپوت اور قطب شاہی اعوان سرداروں سے جوڑتے ہیں۔ پنجاب ڈسٹرکٹ گزیٹیئرز کے تقابلی مطالعے سے واضح ہوتا ہے کہ مغلیہ دور سے قبل ہی یہ قبیلہ دریائے سندھ اور تھل کے سرحدی علاقوں میں مستحکم ہو چکا تھا..."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-6 pt-2">
+                        <a href="#order" class="px-8 py-4 bg-bronze text-parchment text-base font-bold rounded-xl hover:bg-amber-400 transition-all">
+                            کتاب کا آرڈر دیں
+                        </a>
+                        <div class="text-sm text-taupe">
+                            <p class="text-sandstone font-semibold"><span class="ltr-num">340</span> صفحات • مجلد (Hardcover) اور پی ڈی ایف</p>
+                            <p class="text-xs">تاریخی تصاویر اور خاندانی شجرہ چارٹس سمیت</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- کتاب منگوانے یا اپنا شجرہ شامل کروانے کا فارم -->
+    <section id="order" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-sm text-bronze block mb-2">رابطہ و شمولیت</span>
+            <h2 class="font-display text-3xl sm:text-5xl text-white mb-4">کتاب منگوائیں یا اپنا شجرۂ نسب درج کروائیں</h2>
+            <p class="text-taupe text-base sm:text-lg leading-loose">
+                کتاب <strong class="text-sandstone">"تاریخِ بھچر"</strong> کی کاپی حاصل کرنے یا آئندہ ایڈیشن میں اپنے خاندان کا شجرۂ نسب اور بزرگوں کے حالات شامل کروانے کے لیے نیچے دیا گیا فارم پُر کریں۔
+            </p>
+        </div>
+
+        <form id="heritage-form" class="space-y-6 bg-umber p-6 sm:p-10 rounded-2xl border border-white/10 shadow-2xl">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label for="full-name" class="block text-sm text-taupe mb-2">مکمل نام (مع لقب)</label>
+                    <input type="text" id="full-name" required placeholder="مثلاً: ملک طارق محمود بھچر" class="w-full px-4 py-3.5 rounded-xl bg-parchment border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-bronze transition-colors">
+                </div>
+                <div>
+                    <label for="contact-info" class="block text-sm text-taupe mb-2">واٹس ایپ نمبر یا ای میل</label>
+                    <input type="text" id="contact-info" required placeholder="0300-0000000" class="w-full px-4 py-3.5 rounded-xl bg-parchment border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-bronze transition-colors text-left" dir="ltr">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label for="ancestral-village" class="block text-sm text-taupe mb-2">آبائی گاؤں / موضع اور ضلع</label>
+                    <input type="text" id="ancestral-village" placeholder="مثلاً: واں بھچراں / موزع جال، میانوالی" class="w-full px-4 py-3.5 rounded-xl bg-parchment border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-bronze transition-colors">
+                </div>
+                <div>
+                    <label for="purpose" class="block text-sm text-taupe mb-2">درخواست کی نوعیت</label>
+                    <select id="purpose" class="w-full px-4 py-3.5 rounded-xl bg-parchment border border-white/10 text-white focus:outline-none focus:border-bronze transition-colors">
+                        <option value="مجلد کتاب کا آرڈر">مجلد کتاب (Hardcover) کا آرڈر</option>
+                        <option value="ڈیجیٹل ایڈیشن">ڈیجیٹل / پی ڈی ایف ایڈیشن کی درخواست</option>
+                        <option value="خاندانی شجرہ کا اندراج">اپنے خاندان کا شجرۂ نسب شامل کروانا</option>
+                        <option value="تاریخی معلومات و مشورہ">تاریخی معلومات کا تبادلہ / مشورہ</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label for="notes" class="block text-sm text-taupe mb-2">مکمل پتہ یا خاندانی شجرہ کی تفصیلات</label>
+                <textarea id="notes" rows="4" required placeholder="کتاب منگوانے کے لیے اپنا مکمل ڈاک کا پتہ لکھیں، یا اپنے بزرگوں اور خاندان کی تاریخ یہاں درج کریں..." class="w-full px-4 py-3.5 rounded-xl bg-parchment border border-white/10 text-white placeholder-white/25 focus:outline-none focus:border-bronze transition-colors"></textarea>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                <button type="button" id="copy-archive-email" class="text-sm text-taupe hover:text-bronze flex items-center gap-2 py-2 transition-colors">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                    <span class="ltr-num">archive@bhacharhistory.org</span>
+                </button>
+
+                <button type="submit" class="w-full sm:w-auto px-8 py-4 bg-bronze text-parchment text-base font-bold rounded-xl hover:bg-amber-400 transition-all flex items-center justify-center gap-2">
+                    <span>درخواست ارسال کریں</span>
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <!-- فوٹر -->
+    <footer class="py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-umber/60">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-right">
+            <div>
+                <p class="font-display text-2xl text-white">تاریخِ <span class="text-bronze">بھچر</span> آرکائیو</p>
+                <p class="text-xs sm:text-sm text-taupe mt-1">بھچر قبیلے کی تاریخ، ثقافت اور شجرۂ نسب کے تحفظ کا علمی و تحقیقی منصوبہ۔</p>
+            </div>
+            <div class="text-xs sm:text-sm text-taupe">
+                © <span class="ltr-num">2026</span> تاریخِ بھچر اشاعتی منصوبہ۔ جملہ حقوق محفوظ ہیں۔
+            </div>
+        </div>
+    </footer>
+
+    <!-- نوٹیفکیشن باکس -->
+    <div id="toast" class="fixed bottom-6 left-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-sandstone text-parchment px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 font-semibold text-sm">
+        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-700 shrink-0"></i>
+        <span id="toast-message">آپ کی درخواست موصول ہو گئی ہے</span>
+    </div>
+
+    <script>
+        // آئیکنز فعال کریں
+        lucide.createIcons();
+
+        // تاریخی ادوار کا ڈیٹا
+        const timelineEvents = [
+            {
+                era: "early",
+                period: "پندرہویں تا سولہویں صدی",
+                title: "شاہ پور سے ہجرت اور وادیٔ سندھ میں آبادکاری",
+                description: "قدیم شاہ پور (سرگودھا) اور وادیٔ جہلم سے کھوکھر اعوان شاخ کے بھچر سرداروں نے شمال مغربی پنجاب کے زرخیز میدانوں اور تھل کے کنارے مستقل زرعی بستیاں قائم کیں۔"
+            },
+            {
+                era: "early",
+                period: "۱۵۴۰ء – ۱۵۴۵ء (عہدِ سوری)",
+                title: "شیر شاہ سوری کی باؤلی اور واں بھچراں کا قیام",
+                description: "سلطان شیر شاہ سوری نے گجرات سے بنوں جانے والے شاہی راستے پر ایک تاریخی سیڑھیوں والا کنواں (باؤلی) تعمیر کروایا۔ پنجابی میں کنویں کو 'واں' کہتے ہیں، چنانچہ یہ مرکزی بستی 'واں بھچراں' کے نام سے مشہور ہوئی۔"
+            },
+            {
+                era: "colonial",
+                period: "۱۸۷۰ء – ۱۹۱۵ء",
+                title: "ضلع گزیٹیئرز اور ذیلداری نظام",
+                description: "برطانوی دور کے سرکاری گزیٹیئرز (میانوالی اور شاہ پور) میں بھچر قبیلے کی زرعی اہمیت اور قبائلی نظم و ضبط کو درج کیا گیا۔ قبیلے کے سربراہان کو ذیلدار اور نمبردار کے مناصب تفویض کیے گئے۔"
+            },
+            {
+                era: "colonial",
+                period: "۱۹۳۱ء کی مردم شماری",
+                title: "عسکری خدمات اور نہری نوآبادیاں",
+                description: "جے ایم وائیکلی کی مرتب کردہ رپورٹ کے مطابق ضلع میانوالی کے جنوب مشرقی حصے میں بھچر قبیلہ ایک ممتاز عسکری و زرعی قبیلہ قرار پایا، اور قبیلے کے نوجوانوں نے رسالوں (Cavalry) میں کمیشن حاصل کیا۔"
+            },
+            {
+                era: "modern",
+                period: "۱۹۴۷ء تا حال",
+                title: "قیامِ پاکستان اور عصرِ حاضر میں کردار",
+                description: "قیامِ پاکستان کے بعد مہاجرین کی آبادکاری، مقامی سیاست، عدلیہ، افواجِ پاکستان، طب اور تعلیم کے میدان میں واں بھچراں اور دیگر دیہات کے بھچر خاندانوں نے نمایاں خدمات انجام دیں۔"
+            }
+        ];
+
+        // کتاب کے ابواب کا ڈیٹا
+        const chapters = [
+            {
+                title: "باب اول: وجۂ تسمیہ اور کھوکھر نسبت",
+                text: "\"تاریخی اور لسانی شواہد بھچر قبیلے کا سلسلۂ نسب وادیٔ جہلم اور شاہ پور کے قدیم کھوکھر راجپوت اور قطب شاہی اعوان سرداروں سے جوڑتے ہیں۔ پنجاب ڈسٹرکٹ گزیٹیئرز کے تقابلی مطالعے سے واضح ہوتا ہے کہ مغلیہ دور سے قبل ہی یہ قبیلہ دریائے سندھ اور تھل کے سرحدی علاقوں میں مستحکم ہو چکا تھا...\""
+            },
+            {
+                title: "باب دوم: واں بھچراں اور شیر شاہ کی باؤلی",
+                text: "\"تھل کے ریگزاروں کے کنارے پانی زندگی اور خودمختاری کی علامت تھا۔ سولہویں صدی عیسوی میں شیر شاہ سوری کی تعمیر کردہ تاریخی باؤلی (واں) نے اس قصبے کو تجارتی و عسکری قافلوں کا اہم پڑاؤ بنا دیا، جہاں بھچر سرداروں نے امن و امان اور مہمان نوازی کی لازوال روایات قائم کیں...\""
+            },
+            {
+                title: "باب سوم: گزیٹیئرز اور ذیلی شاخیں (خیل)",
+                text: "\"میانوالی کے پڑوسی پشتون قبائل کے ساتھ صدیوں کے ثقافتی میل جول کے باعث بھچر قبیلے کی ذیلی شاخوں کے ساتھ بھی 'خیل' کا لاحقہ رائج ہوا۔ اس باب میں میانہ بھچر سمیت تمام ذیلی خیلوں اور موزع جال، علووالی، دوآبہ، شادیہ اور تلوکر کا تاریخی جائزہ پیش کیا گیا ہے...\""
+            },
+            {
+                title: "باب چہارم: مشاہیر اور شجرۂ نسب چارٹس",
+                text: "\"اس باب میں ملک دوست محمد بھچر، ملک ممتاز احمد بھچر، ملک احمد خان بھچر اور دیگر نامور عسکری، علمی و سماجی شخصیات کے سوانحی خاکوں کے ساتھ ساتھ مختلف خاندانوں کے مستند شجرۂ نسب کے نقشے شامل کیے گئے ہیں...\""
+            }
+        ];
+
+        // ٹائم لائن رینڈر فنکشن
+        const timelineContainer = document.getElementById('timeline-container');
+        const eraButtons = document.querySelectorAll('.era-btn');
+
+        function renderTimeline(filterEra) {
+            const filtered = filterEra === 'all' 
+                ? timelineEvents 
+                : timelineEvents.filter(item => item.era === filterEra);
+
+            timelineContainer.innerHTML = '';
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'bg-umber p-6 sm:p-8 rounded-2xl border border-white/10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 hover:border-bronze/40 transition-all';
+                card.innerHTML = `
+                    <div class="sm:w-52 shrink-0">
+                        <span class="inline-block px-4 py-1.5 rounded-xl bg-bronze/15 text-bronze text-xs sm:text-sm font-semibold">
+                            ${item.period}
+                        </span>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-2xl text-white mb-2">${item.title}</h3>
+                        <p class="text-taupe text-sm sm:text-base leading-loose">${item.description}</p>
+                    </div>
+                `;
+                timelineContainer.appendChild(card);
+            });
+        }
+
+        eraButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                eraButtons.forEach(b => {
+                    b.classList.remove('bg-bronze', 'text-parchment', 'font-bold');
+                    b.classList.add('bg-umber', 'text-taupe');
+                });
+                btn.classList.remove('bg-umber', 'text-taupe');
+                btn.classList.add('bg-bronze', 'text-parchment', 'font-bold');
+                renderTimeline(btn.getAttribute('data-era'));
+            });
+        });
+
+        // ابواب کے اقتباس تبدیل کرنے کا فنکشن
+        const chapterBtns = document.querySelectorAll('.chapter-btn');
+        const excerptTitle = document.getElementById('excerpt-title');
+        const excerptText = document.getElementById('excerpt-text');
+
+        chapterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                chapterBtns.forEach(b => {
+                    b.classList.remove('bg-bronze/20', 'border-bronze', 'text-white', 'font-semibold');
+                    b.classList.add('bg-umber', 'border-white/5', 'text-taupe');
+                });
+                btn.classList.remove('bg-umber', 'border-white/5', 'text-taupe');
+                btn.classList.add('bg-bronze/20', 'border-bronze', 'text-white', 'font-semibold');
+
+                const idx = parseInt(btn.getAttribute('data-chapter'), 10);
+                excerptTitle.textContent = chapters[idx].title;
+                excerptText.textContent = chapters[idx].text;
+            });
+        });
+
+        // موبائل مینو
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // ٹوسٹ نوٹیفکیشن
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3800);
+        }
+
+        // ای میل کاپی بٹن
+        document.getElementById('copy-archive-email').addEventListener('click', () => {
+            const tempInput = document.createElement('input');
+            tempInput.value = 'archive@bhacharhistory.org';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                showToast('ای میل ایڈریس کاپی کر لیا گیا ہے');
+            } catch (e) {
+                showToast('archive@bhacharhistory.org');
+            }
+            document.body.removeChild(tempInput);
+        });
+
+        // فارم سبمٹ
+        document.getElementById('heritage-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('full-name').value;
+            showToast(`شکریہ ${name}! آپ کی درخواست کامیابی سے درج کر لی گئی ہے۔`);
+            e.target.reset();
+        });
+
+        // ابتدائی رینڈر
+        renderTimeline('all');
+    </script>
+</body>
+</html>
+
+```
